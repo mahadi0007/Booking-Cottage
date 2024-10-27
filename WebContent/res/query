@@ -1,0 +1,15 @@
+ PREFIX : <http://localhost:8080/CottageBookingService/onto#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?cottageName ?address ?places ?bedrooms ?distanceToLake ?nearestCity ?distanceToCity ?imageURL
+WHERE {
+    ?cottage rdf:type :Cottage .
+    ?cottage :cottageName ?cottageName .
+    ?cottage :address ?address .
+    ?cottage :places ?places .
+    ?cottage :bedrooms ?bedrooms .
+    ?cottage :distanceToLake ?distanceToLake .
+    ?cottage :nearestCity ?nearestCity .
+    ?cottage :distanceToCity ?distanceToCity .
+    OPTIONAL { ?cottage :imageURL ?imageURL } .
+}
